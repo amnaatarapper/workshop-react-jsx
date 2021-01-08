@@ -24,13 +24,13 @@ function App() {
       <div id="main">
         {/* Renders articles out of every element in images array */}
         {images.map((img, index) => {
-          const { fullSize, path, title, article } = img;
+          const { id, fullSize, path, title, article } = img;
           return (
-            <article className="thumb" key={index + 1}>
+            <article className="thumb" key={id}>
               <a href={fullSize} className="image">
                 <img src={path} alt="" />
               </a>
-              <h2>{title}</h2>
+              <h2>{`${index + 1}. ${title}`}</h2>
               <p>{article}</p>
             </article>
           );
@@ -58,7 +58,7 @@ function App() {
                 {socialIcons.map((icon, index) => {
                   const { icon: iconClass, text } = icon;
                   return (
-                    <li key={index + 1}>
+                    <li key={index}>
                       <a href="/" className={`icon brands ${iconClass}`}>
                         <span className="label">{text}</span>
                       </a>
