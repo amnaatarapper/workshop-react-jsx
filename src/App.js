@@ -55,10 +55,10 @@ function App() {
               <h2>Follow me on ...</h2>
               <ul className="icons">
                 {/* Renders social network icons out of every element in images array */}
-                {socialIcons.map((icon) => {
+                {socialIcons.map((icon, index) => {
                   const { icon: iconClass, text } = icon;
                   return (
-                    <li>
+                    <li key={index + 1}>
                       <a href="/" className={`icon brands ${iconClass}`}>
                         <span className="label">{text}</span>
                       </a>
