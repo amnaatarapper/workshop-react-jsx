@@ -1,4 +1,5 @@
 import images from "./images";
+import socialIcons from "./icons";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
       </header>
 
       <div id="main">
+        {/* Renders articles out of every element in images array */}
         {images.map((img, index) => {
           const { fullSize, path, title, article } = img;
           return (
@@ -52,36 +54,17 @@ function App() {
             <section>
               <h2>Follow me on ...</h2>
               <ul className="icons">
-                <li>
-                  <a href="/" className="icon brands fa-twitter">
-                    <span className="label">Twitter</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/" className="icon brands fa-facebook-f">
-                    <span className="label">Facebook</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/" className="icon brands fa-instagram">
-                    <span className="label">Instagram</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/" className="icon brands fa-github">
-                    <span className="label">GitHub</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/" className="icon brands fa-dribbble">
-                    <span className="label">Dribbble</span>
-                  </a>
-                </li>
-                <li>
-                  <a href="/" className="icon brands fa-linkedin-in">
-                    <span className="label">LinkedIn</span>
-                  </a>
-                </li>
+                {/* Renders social network icons out of every element in images array */}
+                {socialIcons.map((icon) => {
+                  const { icon: iconClass, text } = icon;
+                  return (
+                    <li>
+                      <a href="/" className={`icon brands ${iconClass}`}>
+                        <span className="label">{text}</span>
+                      </a>
+                    </li>
+                  );
+                })}
               </ul>
             </section>
             <p className="copyright">
